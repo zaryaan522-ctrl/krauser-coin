@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import Frog from './Frog.jsx'
+import Dashboard from './Dashboard.jsx'
 
 // Add your real links here when they exist. Empty = shows "coming soon".
 const LINKS = { telegram: '', x: '' }
@@ -7,6 +8,7 @@ const LINKS = { telegram: '', x: '' }
 const NAV = [
   ['about', 'About'],
   ['tokenomics', 'Tokenomics'],
+  ['dashboard', 'Dashboard'],
   ['chart', 'Chart'],
   ['roadmap', 'Roadmap'],
   ['community', 'Community'],
@@ -175,6 +177,12 @@ export default function App() {
               ))}
             </ul>
           </div>
+        </section>
+
+                <section id="dashboard" className="section wide">
+          <h2>Token dashboard</h2>
+          <p className="muted">A simulated trading dashboard for a fictional token. All data is generated sample data.</p>
+          <Dashboard supply={SUPPLY} allocation={ALLOCATION} />
         </section>
 
         <section id="chart" className="section">
