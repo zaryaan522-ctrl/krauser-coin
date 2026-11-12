@@ -288,6 +288,48 @@ export default function Dashboard({ supply, allocation }) {
         </div>
       </div>
 
+      <div className="db-panel db-recent">
+        <div className="db-panelhead">
+          <div>
+            <span className="db-label">Recent transactions</span>{' '}
+            <Sim>SIMULATION</Sim>
+          </div>
+          <span className="muted">Latest activity</span>
+        </div>
+
+        <div className="db-recent-list">
+          {trades.slice(0, 8).map(t => (
+            <div className="db-recent-row" key={t.id}>
+              <div className={`db-recent-type ${t.buy ? 'buy' : 'sell'}`}>
+                {t.buy ? 'BUY' : 'SELL'}
+              </div>
+
+              <div className="db-recent-wallet">
+                <strong>{t.who}</strong>
+                <span>SIM-{String(t.id).padStart(6, '0')}</span>
+              </div>
+
+              <div className="db-recent-amount">
+                <strong>{num(t.qty)} $KRAUS</strong>
+                <span>{px(t.price)} per token</span>
+              </div>
+
+              <div className="db-recent-total">
+                <strong>{usd(t.total)}</strong>
+                <span>{ago(t.minsAgo)}</span>
+              </div>
+
+              <span className="db-recent-status">SIMULATED</span>
+            </div>
+          ))}
+        </div>
+
+        <p className="muted db-warn">
+          All transaction records are generated sample data.
+          They are not real blockchain transactions.
+        </p>
+      </div>
+
       <div className="db-info">
         <div className="db-panel">
           <div className="db-panelhead"><span className="db-label">Token information</span></div>
