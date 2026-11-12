@@ -191,3 +191,98 @@ h2{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:1
   .db-tip{font-size:.72rem}
 }
 @media (prefers-reduced-motion:reduce){.db-line{stroke-dashoffset:0}}
+
+/* RECENT TRANSACTIONS */
+.db-recent {
+  margin-top: 20px;
+}
+
+.db-recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.db-recent-row {
+  display: grid;
+  grid-template-columns: 65px 1.2fr 1.3fr 1fr 90px;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.db-recent-type {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 6px 9px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.db-recent-type.buy {
+  color: #39ff14;
+  background: rgba(57,255,20,0.10);
+}
+
+.db-recent-type.sell {
+  color: #ff3b6b;
+  background: rgba(255,59,107,0.10);
+}
+
+.db-recent-wallet,
+.db-recent-amount,
+.db-recent-total {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.db-recent-wallet strong,
+.db-recent-amount strong,
+.db-recent-total strong {
+  font-size: 13px;
+  color: #fff;
+  overflow-wrap: anywhere;
+}
+
+.db-recent-wallet span,
+.db-recent-amount span,
+.db-recent-total span {
+  font-size: 11px;
+  color: #999;
+}
+
+.db-recent-status {
+  color: #b18cff;
+  background: rgba(177,140,255,0.10);
+  border: 1px solid rgba(177,140,255,0.2);
+  padding: 5px 7px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.db-recent .db-warn {
+  margin-top: 14px;
+  font-size: 11px;
+}
+
+@media (max-width: 650px) {
+  .db-recent-row {
+    grid-template-columns: 55px 1fr 1fr;
+    gap: 10px;
+  }
+
+  .db-recent-total {
+    grid-column: 2;
+  }
+
+  .db-recent-status {
+    grid-column: 3;
+    grid-row: 2;
+  }
+}
+
